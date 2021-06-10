@@ -1,19 +1,9 @@
 import React from "react";
 import Link from "next/link";
+import { posts } from "../../data/data";
 
 // This function gets called at build time
 export async function getStaticPaths() {
-  const data = await fetch("https://odarlis.netlify.app/api/data", {
-    method: "GET",
-    headers: {
-      // update with your user-agent
-      "User-Agent":
-        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
-      Accept: "application/json; charset=UTF-8",
-    },
-  });
-  const posts = await data.json();
-
   // Get the paths we want to pre-render based on posts
   const paths = posts.map((post) => ({
     params: {
@@ -27,16 +17,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-  const data = await fetch("https://odarlis.netlify.app/api/data", {
-    method: "GET",
-    headers: {
-      // update with your user-agent
-      "User-Agent":
-        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36",
-      Accept: "application/json; charset=UTF-8",
-    },
-  });
-  const posts = await data.json();
   //
 
   const id = context.params.id;
