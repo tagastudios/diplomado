@@ -188,9 +188,8 @@
     min-width: 320px;
   }
   .home__section .home__left .home__text {
-    transform: translate(50%, 0%);
     width: 90%;
-    margin: 0 50%;
+    margin: 0 auto;
   }
   .home__section .home__left img {
     width: 100%;
