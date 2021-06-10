@@ -20,7 +20,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-  const data = await fetch("http://localhost:3000/api/data");
+  const data = await fetch("https://odarlis.netlify.app/api/data");
   const posts = await data.json();
   //
 
