@@ -207,7 +207,7 @@
 
 @media only screen and (max-width: 500px) {
   .home__section .home__left .home__text {
-    transform: translate(50%, -50%);
+    transform: translate(0%, -50%);
   }
 }
 /*# sourceMappingURL=style.css.map */
