@@ -3,7 +3,7 @@ import Link from "next/link";
 
 // This function gets called at build time
 export async function getStaticPaths() {
-  const data = await fetch("http://localhost:3000/api/data");
+  const data = await fetch("https://odarlis.netlify.app/api/data");
   const posts = await data.json();
 
   // Get the paths we want to pre-render based on posts
@@ -29,14 +29,12 @@ export async function getStaticProps(context) {
 
   return {
     props: {
-      id,
       detail,
     },
   };
 }
 
 function PostDetail({ detail }) {
-  console.log(detail);
   return (
     <section className="tarea__section">
       <Link href="/">
